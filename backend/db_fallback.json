@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Premium Wireless Headphones",
+      "price": 299.99,
+      "description": "High-quality sound with active noise cancellation and 30-hour battery life.",
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
+      ],
+      "category": "Electronics",
+      "stock": 45,
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "title": "Minimalist Desk Lamp",
+      "price": 89.5,
+      "description": "Adjustable brightness and sleek design perfect for any modern workspace.",
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"
+      ],
+      "category": "Home & Office",
+      "stock": 120,
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "title": "Mechanical Keyboard v2",
+      "price": 159,
+      "description": "Tactile mechanical switches, RGB backlighting, and premium aluminum frame.",
+      "images": [
+        "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800"
+      ],
+      "category": "Electronics",
+      "stock": 0,
+      "status": "Out of Stock"
+    },
+    {
+      "id": 4,
+      "title": "Ergonomic Office Chair",
+      "price": 450,
+      "description": "High-back mesh chair with adjustable lumbar support and 3D armrests.",
+      "images": [
+        "https://images.unsplash.com/photo-1505797149-43b0069ec26b?w=800"
+      ],
+      "category": "Furniture",
+      "stock": 12,
+      "status": "Active"
+    },
+    {
+      "id": 5,
+      "title": "Ceramic Coffee Mug",
+      "price": 24,
+      "description": "Handcrafted ceramic mug, dishwasher and microwave safe.",
+      "images": [
+        "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800"
+      ],
+      "category": "Home & Office",
+      "stock": 200,
+      "status": "Active"
+    }
+  ]
+}

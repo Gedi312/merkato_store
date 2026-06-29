@@ -26,10 +26,10 @@ function ProductDetail() {
     let mounted = true;
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`https://api.escuelajs.co/api/v1/products/${id}`);
+        // Try local backend first
+        const res = await axios.get(`http://localhost:5000/api/products/${id}`);
         if (!mounted) return;
         const p = res.data || null;
-        // Normalize to previous shape where possible
         const normalized = p
           ? {
               id: p.id,
@@ -50,7 +50,33 @@ function ProductDetail() {
           : null;
         setProduct(normalized);
       } catch (err) {
-        if (mounted) setError(err);
+        console.warn("Backend product detail failed, trying fallback:", err);
+        try {
+          const res = await axios.get(`https://api.escuelajs.co/api/v1/products/${id}`);
+          if (!mounted) return;
+          const p = res.data || null;
+          const normalized = p
+            ? {
+                id: p.id,
+                title: p.title,
+                price: p.price,
+                image: p.images?.[0] || p.image || "",
+                description: p.description,
+                details: p.description,
+                sku: `SKU-${p.id}`,
+                weight: p.weight || "-",
+                warranty: p.warranty || "-",
+                shipping: p.shipping || "-",
+                highlights: p.features || [],
+                size: p.size || "-",
+                material: p.material || "-",
+                color: p.color || "-",
+              }
+            : null;
+          setProduct(normalized);
+        } catch (fallbackErr) {
+          if (mounted) setError(fallbackErr);
+        }
       } finally {
         if (mounted) setLoading(false);
       }
